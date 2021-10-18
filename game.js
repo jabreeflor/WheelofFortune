@@ -1,0 +1,336 @@
+Array.prototype.randomize = function () {
+    //fisher yates from http://codereview.stackexchange.com/a/12200/3163
+    var i = this.length;
+    if (i === 0) return false;
+    while (--i) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tempi = this[i];
+        var tempj = this[j];
+        this[i] = tempj;
+        this[j] = tempi;
+    }
+};
+
+Array.prototype.toObject = function () {
+    var o = {};
+    for (var i = 0; i < this.length; i++) {
+        o[this[i]] = '';
+    }
+    return o;
+};
+
+function bindEvent(el, eventName, eventHandler) {
+    if (el.addEventListener) {
+        el.addEventListener(eventName, eventHandler, false);
+    } else if (el.attachEvent) {
+        el.attachEvent('on' + eventName, eventHandler);
+    }
+}
+
+var Wheel = (function () {
+    var wheel = document.getElementById('wheel'),
+        wheelValues = [5000, 600, 500, 300, 500, 800, 550, 400, 300, 900, 500, 300, 900, 0, 600, 400, 300, -2, 800, 350, 450, 700, 300, 600],
+        spinTimeout = false,
+        spinModifier = function () {
+            return Math.random() * 10 + 20;
+        },
+        modifier = spinModifier(),
+        slowdownSpeed = 0.5,
+        prefix = (function () {
+            if (document.body.style.MozTransform !== undefined) {
+                return "MozTransform";
+            } else if (document.body.style.WebkitTransform !== undefined) {
+                return "WebkitTransform";
+            } else if (document.body.style.OTransform !== undefined) {
+                return "OTransform";
+            } else {
+                return "";
+            }
+        }()),
+        degreeToRadian = function (deg) {
+            return deg / (Math.PI * 180);
+        };
+
+    function Wheel() {}
+
+    Wheel.prototype.rotate = function (degrees) {
+        var val = "rotate(-" + degrees + "deg)";
+        if (wheel.style[prefix] !== undefined) wheel.style[prefix] = val;
+        var rad = degreeToRadian(degrees % 360),
+            filter = "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=" + rad + ", M12=-" + rad + ", M21=" + rad + ", M22=" + rad + ")";
+        if (wheel.style.filter !== undefined) wheel.style.filter = filter;
+        wheel.setAttribute("data-rotation", degrees);
+    };
+    
+    Wheel.prototype.addEventListener = function(eventName, eventHandler) {
+        wheel.addEventListener(eventName, eventHandler, false);
+    }
+
+    Wheel.prototype.spin = function (callback, amount) {
+        var _this = this;
+        clearTimeout(spinTimeout);
+        modifier -= slowdownSpeed;
+        if (amount === undefined) {
+            amount = parseInt(wheel.getAttribute('data-rotation'), 10);
+        }
+        this.rotate(amount);
+        if (modifier > 0) {
+            spinTimeout = setTimeout(function () {
+                _this.spin(callback, amount + modifier);
+            }, 1000 / 5);
+        } else {
+            var dataRotation = parseInt(wheel.getAttribute('data-rotation'), 10);
+            modifier = spinModifier();
+            var divider = 360 / wheelValues.length;
+            var offset = divider / 2; //half division
+            var wheelValue = wheelValues[Math.floor(Math.ceil((dataRotation + offset) % 360) / divider)];
+            switch (wheelValue) {
+                case 0:
+                    return callback(0);
+                case -1:
+                    return callback("Free Spin");
+                case -2:
+                    return callback("Lose a turn");
+                default:
+                    return callback(wheelValue);
+            }
+        }
+    };
+
+    return Wheel;
+})();
+
+var WheelGame = (function () {
+    var wheel = new Wheel(),
+        vowels = ['A', 'E', 'I', 'O', 'U'],
+        spinWheel = document.getElementById('spin'),
+        buyVowel = document.getElementById('vowel'),
+        displayArea = document.getElementById('display'),
+        newButton = document.getElementById('newpuzzle'),
+        money = document.getElementById('money'),
+        solve = document.getElementById('solve');
+
+    function WheelGame(puzzles) {
+        var _this = this;
+        this.puzzles = puzzles;
+        this.puzzles.randomize();
+        this.currentMoney = 0;
+        this.puzzleSolved = false;
+
+        bindEvent(buyVowel, "click", function () {
+            if (_this.currentMoney > 200) {
+                if (_this.createGuessPrompt("PLEASE ENTER A VOWEL", true) !== false) {
+                    _this.currentMoney -= 200;
+                    _this.updateMoney();
+                }
+            } else {
+                alert("You need more than $200 to buy a vowel");
+            }
+        });
+        bindEvent(newButton, "click", function () {
+            _this.newRound();
+        });
+        var spinTheWheel = function () {
+            wheel.spin(function (valueSpun) {
+                if (isNaN(valueSpun)) {
+                    alert(valueSpun);
+                } else {
+                    //is a valid number
+                    if (valueSpun === 0) {
+                        alert('Bankrupt!');
+                        _this.currentMoney = 0;
+                    } else {
+                        //spun greater than 0
+                        var amountFound = _this.createGuessPrompt(valueSpun);
+                        _this.currentMoney += (valueSpun * amountFound);
+                    }
+                    _this.updateMoney();
+                }
+            });
+        };
+        bindEvent(spinWheel, "click", spinTheWheel);
+        bindEvent(wheel, "click", spinTheWheel);
+
+        function arrays_equal(a, b) {
+            return !(a < b || b < a);
+        }
+        
+        bindEvent(solve, "click", function () {
+            if (!_this.puzzleSolved) {
+                var solve = prompt("Solve the puzzle?", "");
+                if (solve) {
+                    guess = solve.toUpperCase().split("");
+                    if (arrays_equal(guess, _this.currentPuzzleArray)) {
+                        for (var i = 0; i < guess.length; ++i) {
+                            _this.guessLetter(guess[i], false, true);
+                        }
+                    }
+                    if (!_this.puzzleSolved) {
+                        alert('PUZZLE NOT SOLVED');
+                    }
+                }
+            }
+        });
+        this.startRound(0); //start the 1st round
+    }
+
+    WheelGame.prototype.updateMoney = function () {
+        money.innerHTML = this.currentMoney;
+    };
+
+    WheelGame.prototype.guessLetter = function (guess, isVowel, solvingPuzzle) {
+        var timesFound = 0;
+        solvingPuzzle = solvingPuzzle === undefined ? false : true;
+        //find it:
+        if (guess.length && !this.puzzleSolved) {
+            if (!solvingPuzzle && !isVowel && (guess in vowels.toObject())) {
+                alert("Cannot guess a vowel right now!");
+                return false;
+            }
+            if (!solvingPuzzle && isVowel && !(guess in vowels.toObject())) {
+                alert("Cannot guess a consanant right now!");
+                return false;
+            }
+            for (var i = 0; i < this.currentPuzzleArray.length; ++i) {
+                if (guess == this.currentPuzzleArray[i]) {
+                    var span = document.getElementById("letter" + i);
+                    if (span.innerHTML != guess) {
+                        //found it
+                        ++timesFound;
+                    }
+                    span.innerHTML = guess;
+                    if (guess in this.lettersInPuzzle.toObject() && !(guess in this.guessedArray.toObject())) {
+                        this.guessedArray.push(guess);
+                    }
+                }
+            }
+
+            if (this.guessedArray.length == this.lettersInPuzzle.length) {
+                alert("PUZZLE SOLVED!");
+                this.puzzleSolved = true;
+            }
+
+            return timesFound;
+        }
+        return false;
+
+    };
+
+    var guessTimes = 0;
+    WheelGame.prototype.createGuessPrompt = function (valueSpun, isVowel) {
+        isVowel = isVowel === undefined ? false : true;
+        if (!this.puzzleSolved) {
+            var letter;
+            if (isVowel) {
+                letter = prompt("PLEASE ENTER A VOWEL", "");
+            } else {
+                letter = prompt("YOU SPUN A " + valueSpun + " PLEASE ENTER A CONSONANT", "");
+            }
+            if (letter) {
+                var guess = letter.toUpperCase().charAt(0);
+                var timesFound = this.guessLetter(guess, isVowel);
+                if (timesFound === false) {
+                    ++guessTimes;
+                    if (guessTimes < 5) {
+                        return this.createGuessPrompt(valueSpun, isVowel);
+                    }
+                }
+                guessTimes = 0;
+                return timesFound;
+            } else {
+                ++guessTimes;
+                if (guessTimes < 5) {
+                    return this.createGuessPrompt(valueSpun, isVowel);
+                }
+                else {
+                    // reset guessTimes
+                    guessTimes = 0;
+                }
+            }
+        }
+        return false;
+    };
+
+    WheelGame.prototype.newRound = function () {
+        var round = ++this.round;
+        if (round < this.puzzles.length) {
+            while (displayArea.hasChildNodes()) { //remove old puzzle
+                displayArea.removeChild(displayArea.firstChild);
+            }
+            this.startRound(round);
+        } else {
+            alert("No more puzzles!");
+        }
+    };
+
+    WheelGame.prototype.startRound = function (round) {
+        this.round = round;
+        this.lettersInPuzzle = [];
+        this.guessedArray = [];
+        this.puzzleSolved = false;
+        this.currentPuzzle = this.puzzles[this.round].toUpperCase();
+        this.currentPuzzleArray = this.currentPuzzle.split("");
+        var currentPuzzleArray = this.currentPuzzleArray;
+        var lettersInPuzzle = this.lettersInPuzzle;
+        var word = document.createElement('div');
+        displayArea.appendChild(word);
+        word.className = "word";
+        for (var i = 0; i < currentPuzzleArray.length; ++i) {
+            var span = document.createElement('div');
+            span.className = "wordLetter ";
+
+            if (currentPuzzleArray[i] != " ") {
+                span.className += "letter";
+                if (!(currentPuzzleArray[i] in lettersInPuzzle.toObject())) {
+                    lettersInPuzzle.push(currentPuzzleArray[i]);
+                }
+                word.appendChild(span);
+            } else {
+                span.className += "space";
+                word = document.createElement('div');
+                displayArea.appendChild(word);
+                word.className = "word";
+                word.appendChild(span);
+                word = document.createElement('div');
+                displayArea.appendChild(word);
+                word.className = "word";
+            }
+
+            span.id = "letter" + i;
+        }
+
+        var clear = document.createElement('div');
+        displayArea.appendChild(clear);
+        clear.className = "clear";
+    };
+
+    return WheelGame;
+})();
+
+var Game = new WheelGame([
+    "doctor who", "the dark knight rises", "wheel of fortune",
+    "facebook", "twitter", "google plus", "sea world", "pastrami on rye",
+    "i am sparta", "whose line is it anyway", "google chrome"
+]);
+
+///for instruction pop up upon clciking 
+//////////////////
+// Get the modal
+var modal = document.getElementById("myModal");
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function () {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}

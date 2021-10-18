@@ -1,0 +1,279 @@
+@import url(http://fonts.googleapis.com/css?family=Changa+One);
+
+body {
+    background-color: #6435D1;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    width: 100%;
+}
+
+#TopLogo {
+    margin-top: 0px;
+    font-size: 60px;
+    width: 100%;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    color: rgb(228, 192, 31);
+}
+
+#wheelofpicture {
+    padding-left: 10px;
+    float: left;
+}
+
+#game {
+    font-family:'Changa One' serif;
+    text-align: center;
+}
+
+#displayInfoAlert {
+    background-color: red;
+    padding: 2em 5em;
+    border-radius: 100px;
+    border: 20px double #fff;
+    margin-top: 25px;
+   
+    }
+
+#tick {
+    font-family: Arial;
+    font-size: 90pt;
+    color: gold;
+    margin-left: -458px;
+}
+
+#wheeldiv {
+    display: inline-flex;
+    margin-left: -400;
+}
+
+#leftsideofwheel {
+    margin-left: 200px;
+    float: left;
+    margin-top: 200px;
+    padding-left: 200px;
+     
+
+}
+
+#anything {
+    background-color: rgb(138, 248, 35);
+    border: none;
+        border: 20px double #fff;   
+
+}
+
+#wheel {
+    top: 0;
+    left: 0;
+    width: 1200px;
+    -moz-border-radius: 250px;
+    -webkit-border-radius: 250px;
+    border-radius: 250px;
+    -webkit-transition: -webkit-transform 0.5s linear;
+    -moz-transition: -moz-transform 0.5s linear;
+    -opera-transition: -opera-transform 0.5s linear;
+    -ms-transition: transform 0.5s linear;
+    margin-left: 100px;
+    
+}
+
+#rightsideofwheel {
+    margin-left: 0px;
+    display: inline-flex;
+    
+    
+}
+
+
+#myImg{
+    margin-top: 200px;
+    margin-left: 100px;
+}
+
+
+#displayLeaderBoard {
+    background-color: #1587f1;
+    border-radius: 100px;
+    border: 20px double #fff;
+    font-size: 16pt;
+    padding: 500px 300px;
+    margin-left: 100px;
+    }
+
+#display {
+    background-color: #31ACA0;
+    padding: 2em 5em;
+    text-align: center;
+    border-radius: 100px;
+    border: 20px double #fff;
+    }
+
+#display div.word {
+display: inline-block;
+}
+#display div.wordLetter {
+    display: block;
+    width: 150px;
+    height: 190px;
+    margin: 5px;
+    border: 10px solid #131c74;
+    float: left;
+    line-height: 195px;
+    font-size: 120px;
+}
+#display div.wordLetter.letter {
+    border-color: #eee;
+}
+#playArea {
+    display: inline-block;
+    clear: both;
+    text-align: center;
+    margin-top: 25px;
+}
+#playArea button {
+    text-transform: uppercase;
+    z-index: 1000;
+    border: 20px double #fff;
+    background-color: rgb(228, 192, 31);
+    margin: 5px;
+    padding: 30px 50px;
+    color: white;
+    font-family: inherit;
+    font-size: 34pt;
+    font-weight: 1000;
+}
+#playArea #moneyArea {
+    float: left;
+    z-index: 1000;
+    height: 50px;
+    width: 400px;
+    margin: 10px;
+    font-size: 16pt;
+    padding: 30px 50px;
+    background-color: #2338ec;
+    text-align: center;
+    border-radius: 90px;
+    border: 25px double #fff;
+}
+#playArea #moneyArea #money {
+}
+.clear {
+    clear: both;
+}
+
+/* For the IMAGE SELECTOR INSTRUCTION */
+#myImg {
+    cursor: pointer;
+    transition: 0.5s;
+    align-content: center;
+    height: 600px;
+text-align: right;
+}
+
+#myImg:hover {
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content,
+#caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+/* End of IMAGE SELECTOR ISNTRCUTIONS
