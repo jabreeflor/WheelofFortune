@@ -1,1 +1,2 @@
-# WheelofFortune We are just starting off our wheel of forunte progrject
+# WheelofFortune We are just starting off our wheel of fortune project
+
