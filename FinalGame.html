@@ -4,16 +4,19 @@
 <head>
     <title>Wheel Of Fortune!</title>
 
+
 </head>
 <link rel="stylesheet" href="wheel.css">
 
 <!--Jabree, make sure use use 50% screen size, I tried my best with the visual presentation here. I tried to make every board we will need now that way its a little more organized-->
 <div id="main">
     <div id="TopLogo">
-        <img id="wheelofpicture" src="woflogo.png" data-rotation="0" width="180" height="170" />
+        <img id="wheelofpicture" src="woflogo.png" data-rotation="0" />
         <h1>Wheel Of Fortune! </h1>
     </div>
-
+    <div id="alertdivtop">
+        <div id="displayInfoAlert">No Latest Winner!</div>
+    </div>
     <div id="game">
         <div id="display"></div>
             <div id="playArea">
@@ -23,29 +26,37 @@
                 <button id="newpuzzle">new puzzle</button>
                     <div id="moneyArea">Player 1 Score: $<span id="money">0</span>
                     </div>
-                    <div id="moneyArea">Player 2 Score: $<span id="money">0</span>
+                    <div id="moneyArea2">Player 2 Score: $<span id="money2">0</span>
                     </div>
-                    <div id="moneyArea">Player 3 Score: $<span id="money">0</span>
+                    <div id="moneyArea3">Player 3 Score: $<span id="money3">0</span>
                     </div>
             </div>
 
         <div class="clear"></div>
 
-        <div id="displayInfoAlert">We Can alert player turn or something here!</div>
-        
-        <div id="tick">⇩</div>
-
         <div id="wheeldiv">
             <div id="leftsideofwheel">
-                <textarea rows=50 cols=100 readonly id="anything" >Display anything here</textarea>
+                <textarea rows=20 cols=100 readonly id="anything" >Display anything here</textarea> 
             </div>
-            <img id="wheel" src="wheel.png" data-rotation="0" />
-            <div id="rightsideofwheel">
+
+            <div id="WheelAndTickdiv"> 
+                <div id="tick">⇩</div>
+                <img id="wheel" src="wheel.png" data-rotation="0" />
+            </div>
+
+            <div id="ImgDiv">
                 <img id="myImg" src="instructionsforwheel.jpg" 
-                    alt="These are the instructions for how to play wheel of fortune! (STILL NEEDED TO BE ADDED)"
-                    style="width:100%;max-width:950px;">
-                    <div id="displayLeaderBoard">leader Board</div>
+                    alt="These are the instructions for how to play wheel of fortune! (STILL NEEDED TO BE ADDED)">
             </div>
+
+            <div id="rightsideofwheel">
+                <textarea rows=20 cols=100 readonly id="leaderboardtext" >LeaderBoard</textarea> 
+            </div>
+
+            <div id="prettyvana">
+                <!--<img id="vannna" src="vana2.0.jpg" data-rotation="0" /> -->
+            </div>
+
             <div id="myModal" class="modal">
                 <span class="close">&times;</span>
                 <img class="modal-content" id="img01">
