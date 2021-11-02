@@ -28,6 +28,7 @@ function bindEvent(el, eventName, eventHandler) {
 }
 
 var Wheel = (function () {
+    
     var wheel = document.getElementById('wheel'),
         wheelValues = [5000, 600, 500, 300, 500, 800, 550, 400, 300, 900, 500, 300, 900, 0, 600, 400, 300, -2, 800, 350, 450, 700, 300, 600],
         spinTimeout = false,
@@ -101,6 +102,11 @@ var Wheel = (function () {
 })();
 
 var WheelGame = (function () {
+    var counter = 1;
+    var player1Bal=0;
+    var player2Bal=0;
+    var player3Bal=0;
+    var allText="LeaderBoard "
     var wheel = new Wheel(),
         vowels = ['A', 'E', 'I', 'O', 'U'],
         spinWheel = document.getElementById('spin'),
@@ -144,6 +150,7 @@ var WheelGame = (function () {
                         var amountFound = _this.createGuessPrompt(valueSpun);
                         _this.currentMoney += (valueSpun * amountFound);
                     }
+                    _this.changeTurn();
                     _this.updateMoney();
                 }
             });
@@ -174,8 +181,37 @@ var WheelGame = (function () {
         this.startRound(0); //start the 1st round
     }
 
+
+    WheelGame.prototype.changeTurn = function (){
+        if(counter == 1){
+            //we change the selected box to the corresponding counter
+            money = document.getElementById('money');
+            document.getElementById("moneyArea").style.borderColor="white";
+            document.getElementById("moneyArea2").style.borderColor="yellow";
+            document.getElementById("moneyArea3").style.borderColor="white";
+            counter++;
+        }else if(counter ==2){
+            money = document.getElementById('money2');
+            document.getElementById("moneyArea").style.borderColor="white";
+            document.getElementById("moneyArea2").style.borderColor="white";
+            document.getElementById("moneyArea3").style.borderColor="yellow";
+            counter++;
+        }else if(counter ==3){
+            money = document.getElementById('money3');
+            document.getElementById("moneyArea").style.borderColor="yellow";
+            document.getElementById("moneyArea2").style.borderColor="white";
+            document.getElementById("moneyArea3").style.borderColor="white";
+            counter =1;
+        }
+
+        
+    }
     WheelGame.prototype.updateMoney = function () {
-        money.innerHTML = this.currentMoney;
+        money.innerHTML = parseFloat(money.innerHTML)+ this.currentMoney;
+        player1Bal = parseFloat(document.getElementById('money').innerHTML);
+        player2Bal = parseFloat(document.getElementById('money2').innerHTML);
+        player3Bal = parseFloat(document.getElementById('money3').innerHTML);
+        this.currentMoney = 0;
     };
 
     WheelGame.prototype.guessLetter = function (guess, isVowel, solvingPuzzle) {
@@ -207,6 +243,23 @@ var WheelGame = (function () {
 
             if (this.guessedArray.length == this.lettersInPuzzle.length) {
                 alert("PUZZLE SOLVED!");
+                var currentTime = new Date();
+                var concatTime = currentTime.getHours() + ":"+currentTime.getMinutes();
+                if(player1Bal>player2Bal && player1Bal>player2Bal){
+                    alert("PLAYER 1 HAS WON");
+                    document.getElementById("displayInfoAlert").innerHTML = "Player 1 is the lastest winner with a balance of " + player1Bal + " !";
+                    allText+="\nPlayer 1 has won with "+ player1Bal + " \nat " + concatTime;
+
+                } else if(player1Bal<player2Bal && player3Bal<player2Bal){
+                    alert("PLAYER 2 HAS WON");
+                    document.getElementById("displayInfoAlert").innerHTML = "Player 2 is the lastest winner with a balance of " + player2Bal + " !";
+                    allText+="\n\nPlayer 1 has won with "+ player1Bal + " \nat " + concatTime;
+                }else if(player1Bal<player3Bal && player2Bal>player3Bal){
+                    alert("PLAYER 3 HAS WON")
+                    document.getElementById("displayInfoAlert").innerHTML = "Player 3 is the lastest winner with a balance of " + player3Bal + " !";
+                    allText+="\n\nPlayer 1 has won with "+ player1Bal + " \nat " + concatTime;
+                }
+                document.getElementById("leaderboardtext").innerHTML = allText;
                 this.puzzleSolved = true;
             }
 
@@ -256,6 +309,17 @@ var WheelGame = (function () {
         if (round < this.puzzles.length) {
             while (displayArea.hasChildNodes()) { //remove old puzzle
                 displayArea.removeChild(displayArea.firstChild);
+                document.getElementById('money').innerHTML = 0;
+                document.getElementById('money2').innerHTML =0;
+                document.getElementById('money3').innerHTML =0;
+                money = document.getElementById('money');
+                document.getElementById("moneyArea").style.borderColor="white";
+                document.getElementById("moneyArea2").style.borderColor="yellow";
+                document.getElementById("moneyArea3").style.borderColor="white";
+                counter=1;
+                player1Bal=0;
+                player2Bal=0;
+                player3Bal=0;
             }
             this.startRound(round);
         } else {
@@ -308,9 +372,7 @@ var WheelGame = (function () {
 })();
 
 var Game = new WheelGame([
-    "doctor who", "the dark knight rises", "wheel of fortune",
-    "facebook", "twitter", "google plus", "sea world", "pastrami on rye",
-    "i am sparta", "whose line is it anyway", "google chrome"
+     "app"
 ]);
 
 ///for instruction pop up upon clciking 
@@ -334,3 +396,43 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function () {
     modal.style.display = "none";
 }
+
+
+///for instruction pop up upon clciking 
+//////////////////
+// Get the modal
+var modal = document.getElementById("myModal");
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function () {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+
+
+
+    //Start popup JS
+    $(window).load(function () {
+        $(".trigger_popup_fricc").click(function () {
+            $('.hover_bkgr_fricc').show();
+        });
+        $('.hover_bkgr_fricc').click(function () {
+            $('.hover_bkgr_fricc').hide();
+        });
+        $('.popupCloseButton').click(function () {
+            $('.hover_bkgr_fricc').hide();
+        });
+    });
+    //End popup JS
