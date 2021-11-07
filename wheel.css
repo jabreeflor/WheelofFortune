@@ -13,7 +13,7 @@
 
 
 body {
-    background-color: #6435D1;
+    background-image: linear-gradient(rgb(34, 3, 34), rgb(73, 16, 207));
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     width: 100%;
@@ -33,6 +33,7 @@ body {
 }
 
 #wheelofpicture {
+    
     width: 100px;
     height:100px;
 }
@@ -41,15 +42,43 @@ body {
     width: 50%;
     float: right;
     margin-top: 25px;
+    border-color: rgb(11, 170, 190) ;
+
+}
+
+#displaylevel{
+    background-image: linear-gradient(rgb(13, 108, 138), rgb(21, 9, 48));
+    padding: 1em 0em;
+    border-radius: 100px;
+    border: 10px double #fff;
+    width: 15%;
+    margin-right: 10px;
+    border-color: rgb(8, 226, 255) ;
+    float: right;
+    font-weight: bold;
+    text-align: center;
+}
+
+#displaytimer{
+    background-image: linear-gradient(rgb(13, 108, 138), rgb(21, 9, 48));
+    padding: 1em 0em;
+    border-radius: 100px;
+    border: 10px double #fff;
+    width: 15%;
+    margin-right: 10px;
+    border-color: rgb(8, 226, 255) ;
+    float: right;
+    font-weight: bold;
+    text-align: center;
 }
 
 #displayInfoAlert {
-    background-color: red;
+    background-image: linear-gradient(rgb(197, 17, 197), rgb(21, 9, 48));
     padding: 1em 1em;
     border-radius: 100px;
     border: 10px double #fff;
-    width: 90%;
-
+    margin-right: 355px;
+    border-color: rgb(8, 226, 255) ;
 }
 
 #game {
@@ -61,7 +90,7 @@ body {
 #wheeldiv {
     display: inline-flex;
     margin-bottom: 100px;
-    margin-top: 20px;
+    margin-top: -20px;
     margin-left: -200;
     align-items: center;
 }
@@ -77,12 +106,32 @@ body {
 }
 
 #anything {
-    background-color: rgb(241, 124, 14);
+    background-image: linear-gradient(rgb(73, 16, 207),rgb(65, 6, 65));
     border: 10px double #fff;   
     color: white;
-    height: 600px;
+    height: 280px;
     width: 400px;
+    font-size: 30px;
     text-align: center;
+    border-color: rgb(8, 226, 255) ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    resize: none;
+    overflow: hidden;
+}
+
+#category {
+    background-image: linear-gradient(rgb(73, 16, 207),rgb(65, 6, 65));
+    border: 10px double #fff;   
+    color: white;
+    height: 300px;
+    width: 400px;
+    font-size: 30px;
+    text-align: center;
+    border-color: rgb(8, 226, 255) ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    resize: none;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
 #WheelandTickdiv{
@@ -92,8 +141,13 @@ body {
 #tick {
     font-family: Arial;
     font-size: 40.5pt;
-    color: gold;
+    width: 30px;
+    height: 50px;
     text-align: center;
+    position: relative; 
+    margin-bottom: -10px;
+    margin-top: 20px;
+    
 }
 
 #wheel {
@@ -109,6 +163,7 @@ body {
     -opera-transition: -opera-transform 0.5s linear;
     -ms-transition: transform 0.5s linear;
     text-align: center;
+    
 
 }
 
@@ -116,7 +171,7 @@ body {
 }
 
 #myImg{
-    padding-top: 80px;
+    padding-top: 10px;
     padding-left: 50px;
     width:300px;
     height: 450px;
@@ -129,7 +184,7 @@ body {
 }
 
 #leaderboardtext {
-    background-color: rgb(14, 139, 241);
+    background-image: linear-gradient(rgb(73, 16, 207),rgb(65, 6, 65));
     border: 10px double #fff;   
     color: white;
     margin-left: 50px;
@@ -138,34 +193,67 @@ body {
     width: 400px;
     margin-right: 20px;
     border-radius: 100px;
+    border-color: rgb(8, 226, 255);
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 #display {
-    background-color: #31ACA0;
+    background-image: linear-gradient(rgb(26, 140, 206), rgb(37, 114, 101));
+    padding: 1em 2em;
+    text-align: center;
+    border-radius: 50px;
+    border: 15px double #fff;
+    border-color: rgb(8, 226, 255) ;
+    margin-top: -35px;
+}
+
+#displaychosenletters{
+    background-color: #845ad3;
     padding: 1em 2.5em;
     text-align: center;
     border-radius: 50px;
-    border: 10px double #fff;
-    margin-top: -30px;
+    border: 5px double #fff;
+    border-color: rgb(8, 226, 255) ;
+    margin-top: 5px;
 }
 
 #display div.word {
     display: inline-block;
+    
 }
 
 #display div.wordLetter {
     display: block;
-    width: 60px;
-    height: 85px;
+    width: 75px;
+    height: 105px;
     margin: 2px;
-    border: 5px solid #31ACA0;
     float: left;
-    line-height: 85px;
+    color: #1c81a8;
+    background-image: linear-gradient(rgb(11, 107, 51), rgba(20, 209, 121, 0.822));
+    border: 10px solid #0d030f;
+    line-height: 105px;
     font-size: 60px;
+    font-weight: bold;
+    border-style: solid;
+    
 }
 #display div.wordLetter.letter {
-    border-color: #eee;
+    color: #250925;
+    background-image: linear-gradient(rgb(248, 246, 246), rgba(156, 156, 156, 0.822));
+    border: 10px solid #0d030f;
+    line-height: 105px;
+    font-size: 60px;
+    font-weight: bold;
+    border-style: solid;
+    float: left;
+    display: block;
+    width: 75px;
+    height: 105px;
+    margin: 2px;
 }
+
 #playArea {
     display: inline-block;
     clear: both;
@@ -176,7 +264,7 @@ body {
     text-transform: uppercase;
     z-index: 500;
     border: 10px double #fff;
-    background-color: rgb(228, 192, 31);
+    background-image: linear-gradient(rgb(221, 174, 20),rgb(228, 101, 27));
     margin: 2px;
     padding: 15px 25px;
     color: white;
@@ -190,38 +278,40 @@ body {
     height: 25px;
     width: 200px;
     margin: 5px;
-    font-size: 8pt;
-    padding: 15px 25px;
-    background-color: #2338ec;
-    text-align: center;
+    font-size:18pt;
+    padding: 15px 45px;
+    background-image: linear-gradient(rgb(240, 26, 18),rgb(240, 77, 12));
+    text-align: left;
     border-radius: 45px;
     border: 12px double yellow;
 }
+
 #playArea #moneyArea2 {
     float: left;
     z-index: 500;
     height: 25px;
     width: 200px;
     margin: 5px;
-    font-size: 8pt;
-    padding: 15px 25px;
-    background-color: #2338ec;
-    text-align: center;
+    font-size: 18pt;
+    padding: 15px 45px;
+    background-image: linear-gradient(rgb(218, 204, 15),rgb(173, 162, 9));
+    text-align: left;
     border-radius: 45px;
-    border: 12px double #fff;
+    border: 12px double white;
 }
+
 #playArea #moneyArea3 {
     float: left;
     z-index: 500;
     height: 25px;
     width: 200px;
     margin: 5px;
-    font-size: 8pt;
-    padding: 15px 25px;
-    background-color: #2338ec;
-    text-align: center;
+    font-size: 18pt;
+    padding: 15px 45px;
+    background-image: linear-gradient(rgb(33, 12, 219),rgb(13, 62, 102));
+    text-align: left;
     border-radius: 45px;
-    border: 12px double #fff;
+    border: 12px double white;
 }
 #playArea #moneyArea #money {
 }
