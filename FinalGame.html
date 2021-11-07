@@ -5,27 +5,30 @@
 </head>
 <link rel="stylesheet" href="wheel.css">
 
-<body onload="onLoad()">
+<body onload="onLoad()" fill="url(#vert_white_to_black)">
 <div id="main">
     <div id="TopLogo">
         <img id="wheelofpicture" src="woflogo.png" data-rotation="0" />
-        <h1>Wheel Of Fortune! </h1>
+        <h1> Wheel Of Fortune! </h1>
     </div>
     <div id="alertdivtop">
+        <div id="displaylevel">Level 1</div>
+        <div id="displaytimer">60 seconds</div>
         <div id="displayInfoAlert">No Latest Winner!</div>
     </div>
     <div id="game">
         <div id="display"></div>
+       <!-- <div id="displaychosenletters"></div> -->
             <div id="playArea">
                 <button id="spin">spin wheel</button>
-                <button id="vowel">buy vowel</button>
-                <button id="solve">solve puzzle</button>
-                <button id="newpuzzle">new puzzle</button>
-                    <div id="moneyArea">Player 1 Score: $<span id="money">0</span>
+                <button id="vowel" disabled = true>buy vowel</button>
+                <button id="solve" disabled = true>solve puzzle</button>
+                <button id="newpuzzle" disabled = true>new puzzle</button>
+                    <div id="moneyArea">P: 1 Scr: $<span id="money">0</span>
                     </div>
-                    <div id="moneyArea2">Player 2 Score: $<span id="money2">0</span>
+                    <div id="moneyArea2">P: 2 Scr: $<span id="money2">0</span>
                     </div>
-                    <div id="moneyArea3">Player 3 Score: $<span id="money3">0</span>
+                    <div id="moneyArea3">P: 3 Scr: $<span id="money3">0</span>
                     </div>
             </div>
 
@@ -33,11 +36,14 @@
 
         <div id="wheeldiv">
             <div id="leftsideofwheel">
-                <textarea rows=20 cols=100 readonly id="anything" >Display anything here</textarea> 
+                <textarea rows=10 cols=50 readonly id="anything" >Letters chosen:</textarea> 
+                <textarea rows=10 cols=50 readonly id="category" >Category:</textarea> 
+
             </div>
 
             <div id="WheelAndTickdiv"> 
-                <div id="tick">⇩</div>
+                <!--⇩-->
+                <img id="tick" src="newtick2.png"></img>
                 <img id="wheel" src="wheel.png" data-rotation="0" />
             </div>
 
@@ -81,6 +87,17 @@
 
 </div>
 
+<defs>
+    <linearGradient id="vert_white_to_black" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:rgb(255, 255, 255);stop-opacity:1" />
+        <stop offset="100%" style="stop-color:rgb(0, 0, 0);stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="vert_black_to_white" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:rgb(0, 0, 0);stop-opacity:1" />
+        <stop offset="100%" style="stop-color:rgb(255, 255, 255);stop-opacity:1" />
+    </linearGradient>
+</defs>
 </body>
 <script type="text/javascript" src="game.js">
 </script>

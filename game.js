@@ -60,7 +60,7 @@ var Wheel = (function () {
         var rad = degreeToRadian(degrees % 360),
             filter = "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=" + rad + ", M12=-" + rad + ", M21=" + rad + ", M22=" + rad + ")";
         if (wheel.style.filter !== undefined) wheel.style.filter = filter;
-        wheel.setAttribute("data-rotation", degrees);
+        wheel.setAttribute("data-rotation", degrees);        
     };
     
     Wheel.prototype.addEventListener = function(eventName, eventHandler) {
@@ -68,6 +68,10 @@ var Wheel = (function () {
     }
 
     Wheel.prototype.spin = function (callback, amount) {
+        document.getElementById("vowel").disabled=false;
+        document.getElementById("solve").disabled=false;
+        document.getElementById("newpuzzle").disabled=false;
+
         var _this = this;
         clearTimeout(spinTimeout);
         modifier -= slowdownSpeed;
@@ -76,6 +80,7 @@ var Wheel = (function () {
         }
         this.rotate(amount);
         if (modifier > 0) {
+
             spinTimeout = setTimeout(function () {
                 _this.spin(callback, amount + modifier);
             }, 1000 / 5);
@@ -107,6 +112,7 @@ var WheelGame = (function () {
     var player2Bal=0;
     var player3Bal=0;
     var allText="LeaderBoard "
+    var textarea="Letters chosen:" + "\n"; 
     var wheel = new Wheel(),
         vowels = ['A', 'E', 'I', 'O', 'U'],
         spinWheel = document.getElementById('spin'),
@@ -115,6 +121,7 @@ var WheelGame = (function () {
         newButton = document.getElementById('newpuzzle'),
         money = document.getElementById('money'),
         solve = document.getElementById('solve');
+        document.getElementById("tick").position="relative";
 
     function WheelGame(puzzles) {
         var _this = this;
@@ -215,7 +222,9 @@ var WheelGame = (function () {
     };
 
     WheelGame.prototype.guessLetter = function (guess, isVowel, solvingPuzzle) {
+        var incorrect=0;
         var timesFound = 0;
+        
         solvingPuzzle = solvingPuzzle === undefined ? false : true;
         //find it:
         if (guess.length && !this.puzzleSolved) {
@@ -238,8 +247,19 @@ var WheelGame = (function () {
                     if (guess in this.lettersInPuzzle.toObject() && !(guess in this.guessedArray.toObject())) {
                         this.guessedArray.push(guess);
                     }
+                }else{
+                    incorrect++;
+                    //IF THE GUESS IS INCCORECT, THEN THE VARIABLE INCORRECT WILL BE INCREMENTED
                 }
             }
+            if(incorrect>0){
+                //if the guess is incorrect then the variable inccorrect is changed back to 0
+                alert("guess is false");
+                incorrect=0;
+            }
+            
+            textarea+=""+guess+"  ";
+            document.getElementById("anything").innerHTML= textarea;
 
             if (this.guessedArray.length == this.lettersInPuzzle.length) {
                 alert("PUZZLE SOLVED!");
@@ -283,6 +303,7 @@ var WheelGame = (function () {
                 var guess = letter.toUpperCase().charAt(0);
                 var timesFound = this.guessLetter(guess, isVowel);
                 if (timesFound === false) {
+                    
                     ++guessTimes;
                     if (guessTimes < 5) {
                         return this.createGuessPrompt(valueSpun, isVowel);
@@ -292,6 +313,7 @@ var WheelGame = (function () {
                 return timesFound;
             } else {
                 ++guessTimes;
+                
                 if (guessTimes < 5) {
                     return this.createGuessPrompt(valueSpun, isVowel);
                 }
@@ -372,32 +394,8 @@ var WheelGame = (function () {
 })();
 
 var Game = new WheelGame([
-     "app"
+     "app","jabree","Soupy Boys","Daddy"
 ]);
-
-///for instruction pop up upon clciking 
-//////////////////
-// Get the modal
-var modal = document.getElementById("myModal");
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function () {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
-}
-
-
 ///for instruction pop up upon clciking 
 //////////////////
 // Get the modal
@@ -436,3 +434,4 @@ span.onclick = function () {
         });
     });
     //End popup JS
+
