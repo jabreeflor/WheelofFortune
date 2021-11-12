@@ -27,6 +27,7 @@ function bindEvent(el, eventName, eventHandler) {
     }
 }
 
+
 var Wheel = (function () {
     
     var wheel = document.getElementById('wheel'),
@@ -71,6 +72,9 @@ var Wheel = (function () {
         document.getElementById("vowel").disabled=false;
         document.getElementById("solve").disabled=false;
         document.getElementById("newpuzzle").disabled=false;
+        document.getElementById("vowel").style.backgroundImage = 'linear-gradient(to bottom, rgba(236, 130, 8, 0.938) 1%,rgba(175, 165, 22, 0.87) 100%)';
+        document.getElementById("solve").style.backgroundImage = 'linear-gradient(to bottom, rgba(236, 130, 8, 0.938) 1%,rgba(175, 165, 22, 0.87) 100%)';
+        document.getElementById("newpuzzle").style.backgroundImage = 'linear-gradient(to bottom, rgba(236, 130, 8, 0.938) 1%,rgba(175, 165, 22, 0.87) 100%)';
 
         var _this = this;
         clearTimeout(spinTimeout);
@@ -108,6 +112,7 @@ var Wheel = (function () {
 
 var WheelGame = (function () {
     var counter = 1;
+    var gameLevel = 0;
     var player1Bal=0;
     var player2Bal=0;
     var player3Bal=0;
@@ -120,7 +125,8 @@ var WheelGame = (function () {
         displayArea = document.getElementById('display'),
         newButton = document.getElementById('newpuzzle'),
         money = document.getElementById('money'),
-        solve = document.getElementById('solve');
+        solve = document.getElementById('solve'),
+        timer = document.getElementById('timer');
         document.getElementById("tick").position="relative";
 
     function WheelGame(puzzles) {
@@ -144,6 +150,9 @@ var WheelGame = (function () {
             _this.newRound();
         });
         var spinTheWheel = function () {
+            gameLevel++;
+            gameLevel = document.getElementById('displaylevel').innerHTML;
+
             wheel.spin(function (valueSpun) {
                 if (isNaN(valueSpun)) {
                     alert(valueSpun);
@@ -392,6 +401,14 @@ var WheelGame = (function () {
 
     return WheelGame;
 })();
+
+
+function disableButton(){
+
+
+
+}
+
 
 var Game = new WheelGame([
      "app","jabree","Soupy Boys","Daddy"
