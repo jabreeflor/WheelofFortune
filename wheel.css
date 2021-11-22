@@ -1,1149 +1,1159 @@
 
 @media only screen and (min-width: 0px) and (max-width: 1500px) {
     
-body {
-    background-image: linear-gradient(rgb(34, 3, 34), rgb(73, 16, 207));
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    width: 100%;
-    overflow-x: auto;
-}
-
-#TopLogo {
-    margin-top: 5px;
-    font-size: 30px;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    color: rgb(228, 192, 31);
-    display: inline-flex;
-    display: inline-block
-
-}
-
-#wheelofpicture {
+    body {
+        background-image: linear-gradient(rgb(34, 3, 34), rgb(73, 16, 207));
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        width: 100%;
+        overflow-x: auto;
+    }
     
-    width: 100px;
-    height:100px;
-}
-
-#alertdivtop {
-    width: 50%;
-    float: right;
-    margin-top: 25px;
-    border-color: rgb(11, 170, 190);
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-#displaylevel{
-    background-image: linear-gradient(rgb(13, 108, 138), rgb(21, 9, 48));
-    padding: 1em 0em;
-    border-radius: 100px;
-    border: 10px double #fff;
-    width: 30%;
-    margin-right: 10px;
-    border-color: rgb(8, 226, 255) ;
-    float: right;
-    font-weight: bold;
-    text-align: center;
-}
-
-#displaytimer{
-    background-image: linear-gradient(rgb(13, 108, 138), rgb(21, 9, 48));
-    padding: 1em 0em;
-    border-radius: 100px;
-    border: 10px double #fff;
-    width: 30%;
-    margin-right: 10px;
-    border-color: rgb(8, 226, 255) ;
-    float: right;
-    font-weight: bold;
-    text-align: center;
-}
-
-#displayInfoAlert {
-    background-image: linear-gradient(rgb(197, 17, 197), rgb(21, 9, 48));
-    padding: 1em 0em;
-    border-radius: 100px;
-    border: 10px double #fff;
-    border-color: rgb(8, 226, 255) ;
-    width: 90%;
-    float: left;
-    text-align: center;
-
-}
-
-#game {
-    font-family:'Changa One' serif;
-    text-align: center;
-}
-
-#wheeldiv {
-    display:block;
-    border-color: rgb(22, 6, 165) ;
-    margin-left: 0px;
-    margin-top: 10px;
-}
-
-#vannna{
-    height: 500px;
-    width:300px;
-    display: inline-block;
-}
-
-#leftsideofwheel {
-}
-
-#anything {
-    background-image: linear-gradient(to bottom right,rgb(26, 189, 230),rgb(90, 23, 199));
-    border: 10px double #fff;   
-    color: white;
-    height: 300px;
-    width: 400px;
-    font-size: 30px;
-    text-align: center;
-    border-color: rgb(8, 226, 255) ;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    resize: none;
-    overflow: hidden;
-}
-
-#category {
-    background-image: linear-gradient(to bottom right,rgb(26, 189, 230),rgb(90, 23, 199));
-    border: 10px double #fff;   
-    color: white;
-    height: 300px;
-    width: 400px;
-    font-size: 30px;
-    text-align: center;
-    border-color: rgb(8, 226, 255) ;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    resize: none;
-    overflow: hidden;
-    margin-top: 20px;
-}
-
-#WheelandTickdiv{
-}
-
-#tick {
-    font-family: Arial;
-    font-size: 40.5pt;
-    width: 30px;
-    height: 50px;
-    margin-bottom: -10px;
-    margin: auto;
-    margin-top: 25px;
-    display: block;
-    text-align: center;
+    #TopLogo {
+        margin-top: 5px;
+        font-size: 30px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        color: rgb(228, 192, 31);
+        display: inline-flex;
+        display: inline-block
     
-}
-
-#wheel {
+    }
     
-    width: 500px;
-    height: 500px;
-    -moz-border-radius: 150px;
-    -webkit-border-radius: 150px;
-    border-radius: 150px;
-    -webkit-transition: -webkit-transform 0.5s linear;
-    -moz-transition: -moz-transform 0.5s linear;
-    -opera-transition: -opera-transform 0.5s linear;
-    -ms-transition: transform 0.5s linear;
-    position: relative;
+    #wheelofpicture {
+        
+        width: 100px;
+        height:100px;
+    }
     
-
-}
-
-#rightsideofwheel {
-}
-
-#userinputtext{
-    background-image: linear-gradient(to bottom right,rgb(13, 110, 221),rgb(87, 42, 158));
-    border: 10px double #fff;   
-    color: white;
-    height: 75px;
-    width: 97%;
-    font-size: 25px;
-    border-color: rgb(8, 226, 255) ;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    resize: none;
-    overflow: hidden;
-    margin-top: 80px;
-    text-align: center;
-    display: inline-flex;
-}
-
-#vanaalertbox{
-    background-image: linear-gradient(to bottom right,rgb(236, 236, 236),rgb(73, 73, 175));
-    border: 3px double rgb(50, 194, 187);
-    resize: none;
-    position: absolute;
-    top: 190;
-    left: 180;
-    display: block;
-    float: left;
+    #alertdivtop {
+        width: 50%;
+        float: right;
+        margin-top: 25px;
+        border-color: rgb(11, 170, 190);
+        margin-top: auto;
+        margin-bottom: auto;
+    }
     
-
-}
-
-#myImg1{
-    padding-top: 15px;
-    padding-left: 40px;
-    width:350px;
-    height: 475px;
-    cursor: pointer;
-    display: inline-flex;
-    transition: 0.5s;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-
-#ImgDiv{
-    display: block;
-    margin-top: -40px;
-    font-size: 25px;
-    position: relative;
-
-}   
-
-
-#leaderboardtext {
-    background-image: linear-gradient(to bottom right,rgb(26, 189, 230),rgb(90, 23, 199));
-    border: 10px double #fff;   
-    color: white;
-    height: 600px;
-    text-align: center;
-    width: 96%;
-    margin-left: -20px;
-    border-radius: 100px;
-    border-color: rgb(8, 226, 255);
-    font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
-}
-
-#display {
-    background-image: linear-gradient(rgb(26, 140, 206), rgb(37, 114, 101));
-    padding: 1em 2em;
-    text-align: center;
-    border-radius: 50px;
-    border: 15px double #fff;
-    border-color: rgb(8, 226, 255) ;
-    margin-top: -35px;
-
-}
-
-#displaychosenletters{
-    background-color: #845ad3;
-    padding: 1em 2.5em;
-    text-align: center;
-    border-radius: 50px;
-    border: 5px double #fff;
-    border-color: rgb(8, 226, 255) ;
-    margin-top: 5px;
-}
-
-#display div.word {
-    display: inline-block;
+    #displaylevel{
+        background-image: linear-gradient(rgb(13, 108, 138), rgb(21, 9, 48));
+        padding: 1em 0em;
+        border-radius: 100px;
+        border: 10px double #fff;
+        width: 30%;
+        margin-right: 10px;
+        border-color: rgb(8, 226, 255) ;
+        float: right;
+        font-weight: bold;
+        text-align: center;
+    }
     
-}
-
-#display div.wordLetter {
-    display: block;
-    width: 75px;
-    height: 105px;
-    margin: 2px;
-    float: left;
-    color: #1c81a8;
-    background-image: linear-gradient(rgb(11, 107, 51), rgba(20, 209, 121, 0.822));
-    border: 10px solid #0d030f;
-    line-height: 105px;
-    font-size: 60px;
-    font-weight: bold;
-    border-style: solid;
+    #displaytimer{
+        background-image: linear-gradient(rgb(13, 108, 138), rgb(21, 9, 48));
+        padding: 1em 0em;
+        border-radius: 100px;
+        border: 10px double #fff;
+        width: 30%;
+        margin-right: 10px;
+        border-color: rgb(8, 226, 255) ;
+        float: right;
+        font-weight: bold;
+        text-align: center;
+    }
     
-}
-#display div.wordLetter.letter {
-    color: #250925;
-    background-image: linear-gradient(rgb(248, 246, 246), rgba(156, 156, 156, 0.822));
-    border: 10px solid #0d030f;
-    line-height: 105px;
-    font-size: 60px;
-    font-weight: bold;
-    border-style: solid;
-    float: left;
-    display: block;
-    width: 75px;
-    height: 105px;
-    margin: 2px;
-}
-
-#playArea {
-    display: inline-block;
-    clear: both;
-    text-align: center;
-    margin-top: 12px;
-}
-
-#spin {
-    background-image: linear-gradient(rgba(236, 130, 8, 0.938),rgba(175, 165, 22, 0.87));
-    text-transform: uppercase;
-    z-index: 500;
-    border: 10px double #fff;
-    margin: 2px;
-    padding: 15px 25px;
-    color: white;
-    font-family: inherit;
-    font-size: 17pt;
-    font-weight: 500;
-}
-
-#vowel {
-    background-image: linear-gradient(rgba(75, 75, 75, 0.884),rgb(29, 29, 29));
-    text-transform: uppercase;
-    z-index: 500;
-    border: 10px double #fff;
-    margin: 2px;
-    padding: 15px 25px;
-    color: white;
-    font-family: inherit;
-    font-size: 17pt;
-    font-weight: 500;
-}
-
-
-#solve {
-    background-image: linear-gradient(rgba(75, 75, 75, 0.884),rgb(29, 29, 29));
-    text-transform: uppercase;
-    z-index: 500;
-    border: 10px double #fff;
-    margin: 2px;
-    padding: 15px 25px;
-    color: white;
-    font-family: inherit;
-    font-size: 17pt;
-    font-weight: 500;
-}
-
-#newpuzzle {
-    background-image: linear-gradient(rgba(75, 75, 75, 0.884),rgb(29, 29, 29));
-    text-transform: uppercase;
-    z-index: 500;
-    border: 10px double #fff;
-    margin: 2px;
-    padding: 15px 25px;
-    color: white;
-    font-family: inherit;
-    font-size: 17pt;
-    font-weight: 500;
-}
-
-
-#playArea #moneyArea {
-    z-index: 500;
-    height: 25px;
-    width: 200px;
-    margin-right: 5px;
-    font-size:18pt;
-    padding: 15px 45px;
-    background-image: linear-gradient(rgb(240, 26, 18),rgb(240, 77, 12));
-    text-align: center;
-    border-radius: 45px;
-    display: inline-flex;
-    border: 12px double yellow;
-}
-
-#playArea #moneyArea2 {
-    z-index: 500;
-    height: 25px;
-    width: 200px;
-    margin-right: 5px;
-    font-size: 18pt;
-    padding: 15px 45px;
-    background-image: linear-gradient(rgb(218, 204, 15),rgb(173, 162, 9));
-    text-align: center;
-    border-radius: 45px;
-    display: inline-flex;
-
-    border: 12px double white;
-}
-
-#playArea #moneyArea3 {
-    display: inline-flex;
-    z-index: 500;
-    height: 25px;
-    width: 200px;
-    margin-right: 5px;
-    font-size: 18pt;
-    padding: 15px 45px;
-    background-image: linear-gradient(rgb(33, 12, 219),rgb(13, 62, 102));
-    text-align: center;
-    border-radius: 45px;
-    border: 12px double white;
-}
-#playArea #moneyArea {
-    text-align: center;
-}
-.clear {
-    clear: both;
-}
-#playArea #moneyArea2 #money2 {
-}
-.clear {
-    clear: both;
-}
-#playArea #moneyArea3 #money3 {
-}
-.clear {
-    clear: both;
-}
-
-/* For the IMAGE SELECTOR INSTRUCTION */
-
-#myImg:hover {
-    opacity: 0.7;
-}
-
-
-/* The Modal (background) */
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    padding-top: 50px;
-    /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.9);
-    /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 600px;
-}
-
-/* Caption of Modal Image */
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 350px;
-    text-align: center;
-    color: #ccc;
-    padding: 5px 0;
-    height: 75px;
-}
-
-/* Add Animation */
-.modal-content,
-#caption {
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
-
-
-
-
-@-webkit-keyframes zoom {
-    from {
-        -webkit-transform: scale(0)
+    #displayInfoAlert {
+        background-image: linear-gradient(rgb(197, 17, 197), rgb(21, 9, 48));
+        padding: 1em 0em;
+        border-radius: 100px;
+        border: 10px double #fff;
+        border-color: rgb(8, 226, 255) ;
+        width: 90%;
+        float: left;
+        text-align: center;
+    
+    }
+    
+    #game {
+        font-family:'Changa One' serif;
+        text-align: center;
+    }
+    
+    #wheeldiv {
+        display:block;
+        border-color: rgb(22, 6, 165) ;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+    
+    #vannna{
+        height: 500px;
+        width:300px;
+        display: inline-block;
+    }
+    
+    #leftsideofwheel {
+    }
+    
+    #anything {
+        background-image: linear-gradient(to bottom right,rgb(26, 189, 230),rgb(90, 23, 199));
+        border: 10px double #fff;   
+        color: white;
+        height: 300px;
+        width: 400px;
+        font-size: 30px;
+        text-align: center;
+        border-color: rgb(8, 226, 255) ;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        resize: none;
+        overflow: hidden;
+    }
+    
+    #category {
+        background-image: linear-gradient(to bottom right,rgb(26, 189, 230),rgb(90, 23, 199));
+        border: 10px double #fff;   
+        color: white;
+        height: 300px;
+        width: 400px;
+        font-size: 30px;
+        text-align: center;
+        border-color: rgb(8, 226, 255) ;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        resize: none;
+        overflow: hidden;
+        margin-top: 20px;
+    }
+    
+    #WheelandTickdiv{
+    }
+    
+    #tick {
+        font-family: Arial;
+        font-size: 40.5pt;
+        width: 30px;
+        height: 50px;
+        margin-bottom: -10px;
+        margin: auto;
+        margin-top: 25px;
+        display: block;
+        text-align: center;
+        
     }
 
-    to {
-        -webkit-transform: scale(1)
+    @keyframes ticks {
+        0% {
+            transform: rotate(0deg);
+          }
+          50% {
+            transform: rotate(20deg);
+          }
+          100% {
+            transform: rotate(0deg);
+          }
     }
-}
-
-@keyframes zoom {
-    from {
-        transform: scale(0)
-    }
-
-    to {
-        transform: scale(1)
-    }
-}
-
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-/* End of IMAGE SELECTOR ISNTRCUTIONS
-
-
-/* Start of Popup CSS */
-
-#popup{
-    background-color: #1587f1;
-    border-radius: 50px;
-    border: 10px double #fff;
-}
-
-
-.hover_bkgr_fricc {
-    background: rgba(0, 0, 0, .4);
-    cursor: pointer;
-    display: none;
-    height: 100%;
-    position: fixed;
-    text-align: center;
-    top: 0;
-    width: 100%;
-    z-index: 10000;
-}
-
-.hover_bkgr_fricc .helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
-
-.hover_bkgr_fricc>div {
-    background-color: #fff;
-    box-shadow: 10px 10px 60px #555;
-    display: inline-block;
-    height: auto;
-    max-width: 1000px;
-    min-height: 100px;
-    vertical-align: middle;
-    width: 60%;
-    position: relative;
-    border-radius: 8px;
-    padding: 5px;
-}
-
-.popupCloseButton {
-    background-color: #fff;
-    border: 3px solid #999;
-    border-radius: 50px;
-    cursor: pointer;
-    display: inline-block;
-    font-family: arial;
-    font-weight: bold;
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    font-size: 25px;
-    line-height: 30px;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-}
-
-.popupCloseButton:hover {
-    background-color: #ccc;
-}
-
-.trigger_popup_fricc {
-    cursor: pointer;
-    font-size: 20px;
-    margin: 20px;
-    display: inline-block;
-    font-weight: bold;
-}
-
-/* End of Popup CSS */
-}
-
-@media only screen and (min-width: 1500px) and (max-width: 2000px) {
-
-body {
-    background-image: linear-gradient(rgb(34, 3, 34), rgb(73, 16, 207));
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    width: 100%;
-    overflow-x: auto;
-}
-
-#TopLogo {
-    margin-top: 5px;
-    font-size: 30px;
-    width: 50%;
-    display: inline;
-    margin-left: auto;
-    margin-right: auto;
-    color: rgb(228, 192, 31);
-    display: inline-flex;
-
-}
-
-#wheelofpicture {
     
-    width: 100px;
-    height:100px;
-}
-
-#alertdivtop {
-    width: 50%;
-    float: right;
-    margin-top: 25px;
-    border-color: rgb(11, 170, 190) ;
-
-}
-
-#displaylevel{
-    background-image: linear-gradient(rgb(13, 108, 138), rgb(21, 9, 48));
-    padding: 1em 0em;
-    border-radius: 100px;
-    border: 10px double #fff;
-    width: 15%;
-    margin-right: 10px;
-    border-color: rgb(8, 226, 255) ;
-    float: right;
-    font-weight: bold;
-    text-align: center;
-}
-
-#displaytimer{
-    background-image: linear-gradient(rgb(13, 108, 138), rgb(21, 9, 48));
-    padding: 1em 0em;
-    border-radius: 100px;
-    border: 10px double #fff;
-    width: 15%;
-    margin-right: 10px;
-    border-color: rgb(8, 226, 255) ;
-    float: right;
-    font-weight: bold;
-    text-align: center;
-}
-
-#displayInfoAlert {
-    background-image: linear-gradient(rgb(197, 17, 197), rgb(21, 9, 48));
-    padding: 1em 1em;
-    border-radius: 100px;
-    border: 10px double #fff;
-    margin-right: 355px;
-    border-color: rgb(8, 226, 255) ;
-}
-
-#game {
-    font-family:'Changa One' serif;
-    text-align: center;
-}
-
-#wheeldiv {
-    display: inline-flex;
-    margin-bottom: 100px;
-    margin-top: -20px;
-    margin-left: -200;
-    align-items: center;
-}
-
-
-#vannna{
-    height: 500px;
-    width:300px;
-    display: inline-block;
-}
-
-#leftsideofwheel {
-    margin-left: 200px;
-}
-
-#anything {
-    background-image: linear-gradient(to bottom right,rgb(26, 189, 230),rgb(90, 23, 199));
-    border: 10px double #fff;   
-    color: white;
-    height: 280px;
-    width: 400px;
-    font-size: 30px;
-    text-align: center;
-    border-color: rgb(8, 226, 255) ;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    resize: none;
-    overflow: hidden;
-}
-
-#category {
-    background-image: linear-gradient(to bottom right,rgb(26, 189, 230),rgb(90, 23, 199));
-    border: 10px double #fff;   
-    color: white;
-    height: 300px;
-    width: 400px;
-    font-size: 30px;
-    text-align: center;
-    border-color: rgb(8, 226, 255) ;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    resize: none;
-    overflow: hidden;
-    margin-top: 20px;
-}
-
-#WheelandTickdiv{
-    padding-left: 50px;
-}
-
-#tick {
-    font-family: Arial;
-    font-size: 40.5pt;
-    width: 30px;
-    height: 50px;
-    text-align: center;
-    position: relative; 
-    margin-bottom: -10px;
-    margin-top: 25px;
-    
-}
-
-#wheel {
-    top: 0;
-    left: 0;
-    width: 600px;
-    height: 600px;
-    -moz-border-radius: 150px;
-    -webkit-border-radius: 150px;
-    border-radius: 150px;
-    -webkit-transition: -webkit-transform 0.5s linear;
-    -moz-transition: -moz-transform 0.5s linear;
-    -opera-transition: -opera-transform 0.5s linear;
-    -ms-transition: transform 0.5s linear;
-    text-align: center;
-    
-
-}
-
-#rightsideofwheel {
-}
-
-#userinputtext{
-    background-image: linear-gradient(to bottom right,rgb(11, 121, 247),rgb(106, 38, 216));
-    border: 10px double #fff;   
-    color: white;
-    height: 75px;
-    width: 270px;
-    font-size: 25px;
-    text-align: center;
-    border-color: rgb(8, 226, 255) ;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    resize: none;
-    overflow: hidden;
-}
-
-#vanaalertbox{
-    position: absolute;
-    top: 525px;
-    left: 1128px;
-    background-image: linear-gradient(to bottom right,rgb(236, 236, 236),rgb(73, 73, 175));
-    border: 3px double rgb(50, 194, 187);
-    resize: none;
-}
-
-#myImg1{
-    padding-top: 15px;
-    padding-left: 40px;
-    width:350px;
-    height: 475px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-#ImgDiv{
-    margin-top: -40px;
-    font-size: 25px;
-
-}   
-
-
-#leaderboardtext {
-    background-image: linear-gradient(to bottom right,rgb(26, 189, 230),rgb(90, 23, 199));
-    border: 10px double #fff;   
-    color: white;
-    margin-left: 50px;
-    height: 600px;
-    text-align: center;
-    width: 400px;
-    margin-right: 20px;
-    border-radius: 100px;
-    border-color: rgb(8, 226, 255);
-    font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
-}
-
-#display {
-    background-image: linear-gradient(rgb(26, 140, 206), rgb(37, 114, 101));
-    padding: 1em 2em;
-    text-align: center;
-    border-radius: 50px;
-    border: 15px double #fff;
-    border-color: rgb(8, 226, 255) ;
-    margin-top: -35px;
-}
-
-#displaychosenletters{
-    background-color: #845ad3;
-    padding: 1em 2.5em;
-    text-align: center;
-    border-radius: 50px;
-    border: 5px double #fff;
-    border-color: rgb(8, 226, 255) ;
-    margin-top: 5px;
-}
-
-#display div.word {
-    display: inline-block;
-    
-}
-
-#display div.wordLetter {
-    display: block;
-    width: 75px;
-    height: 105px;
-    margin: 2px;
-    float: left;
-    color: #1c81a8;
-    background-image: linear-gradient(rgb(11, 107, 51), rgba(20, 209, 121, 0.822));
-    border: 10px solid #0d030f;
-    line-height: 105px;
-    font-size: 60px;
-    font-weight: bold;
-    border-style: solid;
-    
-}
-#display div.wordLetter.letter {
-    color: #250925;
-    background-image: linear-gradient(rgb(248, 246, 246), rgba(156, 156, 156, 0.822));
-    border: 10px solid #0d030f;
-    line-height: 105px;
-    font-size: 60px;
-    font-weight: bold;
-    border-style: solid;
-    float: left;
-    display: block;
-    width: 75px;
-    height: 105px;
-    margin: 2px;
-}
-
-#playArea {
-    display: inline-block;
-    clear: both;
-    text-align: center;
-    margin-top: 12px;
-}
-
-#spin {
-    background-image: linear-gradient(rgba(236, 130, 8, 0.938),rgba(175, 165, 22, 0.87));
-    text-transform: uppercase;
-    z-index: 500;
-    border: 10px double #fff;
-    margin: 2px;
-    padding: 15px 25px;
-    color: white;
-    font-family: inherit;
-    font-size: 17pt;
-    font-weight: 500;
-}
-
-#vowel {
-    background-image: linear-gradient(rgba(75, 75, 75, 0.884),rgb(29, 29, 29));
-    text-transform: uppercase;
-    z-index: 500;
-    border: 10px double #fff;
-    margin: 2px;
-    padding: 15px 25px;
-    color: white;
-    font-family: inherit;
-    font-size: 17pt;
-    font-weight: 500;
-}
-
-
-#solve {
-    background-image: linear-gradient(rgba(75, 75, 75, 0.884),rgb(29, 29, 29));
-    text-transform: uppercase;
-    z-index: 500;
-    border: 10px double #fff;
-    margin: 2px;
-    padding: 15px 25px;
-    color: white;
-    font-family: inherit;
-    font-size: 17pt;
-    font-weight: 500;
-}
-
-#newpuzzle {
-    background-image: linear-gradient(rgba(75, 75, 75, 0.884),rgb(29, 29, 29));
-    text-transform: uppercase;
-    z-index: 500;
-    border: 10px double #fff;
-    margin: 2px;
-    padding: 15px 25px;
-    color: white;
-    font-family: inherit;
-    font-size: 17pt;
-    font-weight: 500;
-}
-
-
-#playArea #moneyArea {
-    float: left;
-    z-index: 500;
-    height: 25px;
-    width: 200px;
-    margin-right: 5px;
-    font-size:18pt;
-    padding: 15px 45px;
-    background-image: linear-gradient(rgb(240, 26, 18),rgb(240, 77, 12));
-    text-align: left;
-    border-radius: 45px;
-    border: 12px double yellow;
-}
-
-#playArea #moneyArea2 {
-    float: left;
-    z-index: 500;
-    height: 25px;
-    width: 200px;
-    margin-right: 5px;
-    font-size: 18pt;
-    padding: 15px 45px;
-    background-image: linear-gradient(rgb(218, 204, 15),rgb(173, 162, 9));
-    text-align: left;
-    border-radius: 45px;
-    border: 12px double white;
-}
-
-#playArea #moneyArea3 {
-    float: left;
-    z-index: 500;
-    height: 25px;
-    width: 200px;
-    margin-right: 5px;
-    font-size: 18pt;
-    padding: 15px 45px;
-    background-image: linear-gradient(rgb(33, 12, 219),rgb(13, 62, 102));
-    text-align: left;
-    border-radius: 45px;
-    border: 12px double white;
-}
-#playArea #moneyArea #money {
-}
-.clear {
-    clear: both;
-}
-#playArea #moneyArea2 #money2 {
-}
-.clear {
-    clear: both;
-}
-#playArea #moneyArea3 #money3 {
-}
-.clear {
-    clear: both;
-}
-
-/* For the IMAGE SELECTOR INSTRUCTION */
-
-#myImg:hover {
-    opacity: 0.7;
-}
-
-
-/* The Modal (background) */
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    padding-top: 50px;
-    /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.9);
-    /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 600px;
-}
-
-/* Caption of Modal Image */
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 350px;
-    text-align: center;
-    color: #ccc;
-    padding: 5px 0;
-    height: 75px;
-}
-
-/* Add Animation */
-.modal-content,
-#caption {
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
-
-
-
-
-@-webkit-keyframes zoom {
-    from {
-        -webkit-transform: scale(0)
+    #rightsideofwheel {
     }
-
-    to {
-        -webkit-transform: scale(1)
+    
+    #userinputtext{
+        background-image: linear-gradient(to bottom right,rgb(13, 110, 221),rgb(87, 42, 158));
+        border: 10px double #fff;   
+        color: white;
+        height: 75px;
+        width: 97%;
+        font-size: 25px;
+        border-color: rgb(8, 226, 255) ;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        resize: none;
+        overflow: hidden;
+        margin-top: 80px;
+        text-align: center;
+        display: inline-flex;
     }
-}
-
-@keyframes zoom {
-    from {
-        transform: scale(0)
+    
+    #vanaalertbox{
+        background-image: linear-gradient(to bottom right,rgb(236, 236, 236),rgb(73, 73, 175));
+        border: 3px double rgb(50, 194, 187);
+        resize: none;
+        position: absolute;
+        top: 190;
+        left: 180;
+        display: block;
+        float: left;
+        
+    
     }
-
-    to {
-        transform: scale(1)
+    
+    #myImg1{
+        padding-top: 15px;
+        padding-left: 40px;
+        width:350px;
+        height: 475px;
+        cursor: pointer;
+        display: inline-flex;
+        transition: 0.5s;
+        margin-bottom: 10px;
+        text-align: center;
     }
-}
+    
+    
+    #ImgDiv{
+        display: block;
+        margin-top: -40px;
+        font-size: 25px;
+        position: relative;
+    
+    }   
+    
+    
+    #leaderboardtext {
+        background-image: linear-gradient(to bottom right,rgb(26, 189, 230),rgb(90, 23, 199));
+        border: 10px double #fff;   
+        color: white;
+        height: 600px;
+        text-align: center;
+        width: 96%;
+        margin-left: -20px;
+        border-radius: 100px;
+        border-color: rgb(8, 226, 255);
+        font-size: 20px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    
+    }
+    
+    #display {
+        background-image: linear-gradient(rgb(26, 140, 206), rgb(37, 114, 101));
+        padding: 1em 2em;
+        text-align: center;
+        border-radius: 50px;
+        border: 15px double #fff;
+        border-color: rgb(8, 226, 255) ;
+        margin-top: -35px;
+    
+    }
+    
+    #displaychosenletters{
+        background-color: #845ad3;
+        padding: 1em 2.5em;
+        text-align: center;
+        border-radius: 50px;
+        border: 5px double #fff;
+        border-color: rgb(8, 226, 255) ;
+        margin-top: 5px;
+    }
+    
+    #display div.word {
+        display: inline-block;
+        
+    }
+    
+    #display div.wordLetter {
+        display: block;
+        width: 75px;
+        height: 105px;
+        margin: 2px;
+        float: left;
+        color: #1c81a8;
+        background-image: linear-gradient(rgb(11, 107, 51), rgba(20, 209, 121, 0.822));
+        border: 10px solid #0d030f;
+        line-height: 105px;
+        font-size: 60px;
+        font-weight: bold;
+        border-style: solid;
+        
+    }
+    #display div.wordLetter.letter {
+        color: #250925;
+        background-image: linear-gradient(rgb(248, 246, 246), rgba(156, 156, 156, 0.822));
+        border: 10px solid #0d030f;
+        line-height: 105px;
+        font-size: 60px;
+        font-weight: bold;
+        border-style: solid;
+        float: left;
+        display: block;
+        width: 75px;
+        height: 105px;
+        margin: 2px;
+    }
+    
+    #playArea {
+        display: inline-block;
+        clear: both;
+        text-align: center;
+        margin-top: 12px;
+    }
+    
+    #spin {
+        background-image: linear-gradient(rgba(236, 130, 8, 0.938),rgba(175, 165, 22, 0.87));
+        text-transform: uppercase;
+        z-index: 500;
+        border: 10px double #fff;
+        margin: 2px;
+        padding: 15px 25px;
+        color: white;
+        font-family: inherit;
+        font-size: 17pt;
+        font-weight: 500;
+    }
+    
+    #vowel {
+        background-image: linear-gradient(rgba(75, 75, 75, 0.884),rgb(29, 29, 29));
+        text-transform: uppercase;
+        z-index: 500;
+        border: 10px double #fff;
+        margin: 2px;
+        padding: 15px 25px;
+        color: white;
+        font-family: inherit;
+        font-size: 17pt;
+        font-weight: 500;
+    }
+    
+    
+    #solve {
+        background-image: linear-gradient(rgba(75, 75, 75, 0.884),rgb(29, 29, 29));
+        text-transform: uppercase;
+        z-index: 500;
+        border: 10px double #fff;
+        margin: 2px;
+        padding: 15px 25px;
+        color: white;
+        font-family: inherit;
+        font-size: 17pt;
+        font-weight: 500;
+    }
+    
+    #newpuzzle {
+        background-image: linear-gradient(rgba(75, 75, 75, 0.884),rgb(29, 29, 29));
+        text-transform: uppercase;
+        z-index: 500;
+        border: 10px double #fff;
+        margin: 2px;
+        padding: 15px 25px;
+        color: white;
+        font-family: inherit;
+        font-size: 17pt;
+        font-weight: 500;
+    }
+    
+    
+    #playArea #moneyArea {
+        z-index: 500;
+        height: 25px;
+        width: 200px;
+        margin-right: 5px;
+        font-size:18pt;
+        padding: 15px 45px;
+        background-image: linear-gradient(rgb(240, 26, 18),rgb(240, 77, 12));
+        text-align: center;
+        border-radius: 45px;
+        display: inline-flex;
+        border: 12px double yellow;
+    }
+    
+    #playArea #moneyArea2 {
+        z-index: 500;
+        height: 25px;
+        width: 200px;
+        margin-right: 5px;
+        font-size: 18pt;
+        padding: 15px 45px;
+        background-image: linear-gradient(rgb(218, 204, 15),rgb(173, 162, 9));
+        text-align: center;
+        border-radius: 45px;
+        display: inline-flex;
+    
+        border: 12px double white;
+    }
+    
+    #playArea #moneyArea3 {
+        display: inline-flex;
+        z-index: 500;
+        height: 25px;
+        width: 200px;
+        margin-right: 5px;
+        font-size: 18pt;
+        padding: 15px 45px;
+        background-image: linear-gradient(rgb(33, 12, 219),rgb(13, 62, 102));
+        text-align: center;
+        border-radius: 45px;
+        border: 12px double white;
+    }
+    #playArea #moneyArea {
+        text-align: center;
+    }
+    .clear {
+        clear: both;
+    }
+    #playArea #moneyArea2 #money2 {
+    }
+    .clear {
+        clear: both;
+    }
+    #playArea #moneyArea3 #money3 {
+    }
+    .clear {
+        clear: both;
+    }
+    
+    /* For the IMAGE SELECTOR INSTRUCTION */
+    
+    #myImg:hover {
+        opacity: 0.7;
+    }
+    
+    
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 50px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Black w/ opacity */
+    }
+    
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 600px;
+    }
+    
+    /* Caption of Modal Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 350px;
+        text-align: center;
+        color: #ccc;
+        padding: 5px 0;
+        height: 75px;
+    }
+    
+    /* Add Animation */
+    .modal-content,
+    #caption {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+    
+    
+    
+    
+    @-webkit-keyframes zoom {
+        from {
+            -webkit-transform: scale(0)
+        }
+    
+        to {
+            -webkit-transform: scale(1)
+        }
+    }
+    
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+    
+        to {
+            transform: scale(1)
+        }
+    }
+    
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    
+    /* End of IMAGE SELECTOR ISNTRCUTIONS
+    
+    
+    /* Start of Popup CSS */
+    
+    #popup{
+        background-color: #1587f1;
+        border-radius: 50px;
+        border: 10px double #fff;
+    }
+    
+    
+    .hover_bkgr_fricc {
+        background: rgba(0, 0, 0, .4);
+        cursor: pointer;
+        display: none;
+        height: 100%;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        z-index: 10000;
+    }
+    
+    .hover_bkgr_fricc .helper {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    
+    .hover_bkgr_fricc>div {
+        background-color: #fff;
+        box-shadow: 10px 10px 60px #555;
+        display: inline-block;
+        height: auto;
+        max-width: 1000px;
+        min-height: 100px;
+        vertical-align: middle;
+        width: 60%;
+        position: relative;
+        border-radius: 8px;
+        padding: 5px;
+    }
+    
+    .popupCloseButton {
+        background-color: #fff;
+        border: 3px solid #999;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-block;
+        font-family: arial;
+        font-weight: bold;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        font-size: 25px;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+    }
+    
+    .popupCloseButton:hover {
+        background-color: #ccc;
+    }
+    
+    .trigger_popup_fricc {
+        cursor: pointer;
+        font-size: 20px;
+        margin: 20px;
+        display: inline-block;
+        font-weight: bold;
+    }
+    
+    /* End of Popup CSS */
+    }
+    
+    @media only screen and (min-width: 1500px) and (max-width: 100000px) {
+    
+    body {
+        background-image: linear-gradient(rgb(34, 3, 34), rgb(73, 16, 207));
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        width: 100%;
+        overflow-x: auto;
+    }
+    
+    #TopLogo {
+        margin-top: 5px;
+        font-size: 30px;
+        width: 50%;
+        display: inline;
+        margin-left: auto;
+        margin-right: auto;
+        color: rgb(228, 192, 31);
+        display: inline-flex;
+    
+    }
+    
+    #wheelofpicture {
+        
+        width: 100px;
+        height:100px;
+    }
+    
+    #alertdivtop {
+        width: 50%;
+        float: right;
+        margin-top: 25px;
+        border-color: rgb(11, 170, 190) ;
+    
+    }
+    
+    #displaylevel{
+        background-image: linear-gradient(rgb(13, 108, 138), rgb(21, 9, 48));
+        padding: 1em 0em;
+        border-radius: 100px;
+        border: 10px double #fff;
+        width: 15%;
+        margin-right: 10px;
+        border-color: rgb(8, 226, 255) ;
+        float: right;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    #displaytimer{
+        background-image: linear-gradient(rgb(13, 108, 138), rgb(21, 9, 48));
+        padding: 1em 0em;
+        border-radius: 100px;
+        border: 10px double #fff;
+        width: 15%;
+        margin-right: 10px;
+        border-color: rgb(8, 226, 255) ;
+        float: right;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    #displayInfoAlert {
+        background-image: linear-gradient(rgb(197, 17, 197), rgb(21, 9, 48));
+        padding: 1em 1em;
+        border-radius: 100px;
+        border: 10px double #fff;
+        margin-right: 355px;
+        border-color: rgb(8, 226, 255) ;
+    }
+    
+    #game {
+        font-family:'Changa One' serif;
+        text-align: center;
+    }
+    
+    #wheeldiv {
+        display: inline-flex;
+        margin-bottom: 100px;
+        margin-top: -20px;
+        margin-left: -200;
+        align-items: center;
+    }
+    
+    
+    #vannna{
+        height: 500px;
+        width:300px;
+        display: inline-block;
+    }
+    
+    #leftsideofwheel {
+        margin-left: 200px;
+    }
+    
+    #anything {
+        background-image: linear-gradient(to bottom right,rgb(26, 189, 230),rgb(90, 23, 199));
+        border: 10px double #fff;   
+        color: white;
+        height: 280px;
+        width: 400px;
+        font-size: 30px;
+        text-align: center;
+        border-color: rgb(8, 226, 255) ;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        resize: none;
+        overflow: hidden;
+    }
+    
+    #category {
+        background-image: linear-gradient(to bottom right,rgb(26, 189, 230),rgb(90, 23, 199));
+        border: 10px double #fff;   
+        color: white;
+        height: 300px;
+        width: 400px;
+        font-size: 30px;
+        text-align: center;
+        border-color: rgb(8, 226, 255) ;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        resize: none;
+        overflow: hidden;
+        margin-top: 20px;
+    }
+    
+    #WheelandTickdiv{
+        padding-left: 50px;
+    }
+    
+    #tick {
+        font-family: Arial;
+        font-size: 40.5pt;
+        width: 30px;
+        height: 50px;
+        text-align: center;
+        position: relative; 
+        margin-bottom: -10px;
+        margin-top: 25px;
+        z-index: 999;
 
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-/* End of IMAGE SELECTOR ISNTRCUTIONS
-
-
-/* Start of Popup CSS */
-
-#popup{
-    background-color: #1587f1;
-    border-radius: 50px;
-    border: 10px double #fff;
-}
-
-
-.hover_bkgr_fricc {
-    background: rgba(0, 0, 0, .4);
-    cursor: pointer;
-    display: none;
-    height: 100%;
-    position: fixed;
-    text-align: center;
-    top: 0;
-    width: 100%;
-    z-index: 10000;
-}
-
-.hover_bkgr_fricc .helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
-
-.hover_bkgr_fricc>div {
-    background-color: #fff;
-    box-shadow: 10px 10px 60px #555;
-    display: inline-block;
-    height: auto;
-    max-width: 1000px;
-    min-height: 100px;
-    vertical-align: middle;
-    width: 60%;
-    position: relative;
-    border-radius: 8px;
-    padding: 5px;
-}
-
-.popupCloseButton {
-    background-color: #fff;
-    border: 3px solid #999;
-    border-radius: 50px;
-    cursor: pointer;
-    display: inline-block;
-    font-family: arial;
-    font-weight: bold;
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    font-size: 25px;
-    line-height: 30px;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-}
-
-.popupCloseButton:hover {
-    background-color: #ccc;
-}
-
-.trigger_popup_fricc {
-    cursor: pointer;
-    font-size: 20px;
-    margin: 20px;
-    display: inline-block;
-    font-weight: bold;
-}
-
-/* End of Popup CSS */
-}
-
+    }
+    @keyframes ticks {
+        0% {
+            transform: rotate(0deg);
+          }
+          50% {
+            transform: rotate(20deg);
+          }
+          100% {
+            transform: rotate(0deg);
+          }
+    }
+    
+    #wheel {
+        top: 0;
+        left: 0;
+        width: 600px;
+        height: 600px;
+        -moz-border-radius: 150px;
+        -webkit-border-radius: 150px;
+        border-radius: 150px;
+        -webkit-transition: -webkit-transform 0.5s linear;
+        -moz-transition: -moz-transform 0.5s linear;
+        -opera-transition: -opera-transform 0.5s linear;
+        -ms-transition: transform 0.5s linear;
+        text-align: center;
+        z-index: 99;
+        
+    
+    }
+    
+    #rightsideofwheel {
+    }
+    
+    #userinputtext{
+        background-image: linear-gradient(to bottom right,rgb(11, 121, 247),rgb(106, 38, 216));
+        border: 10px double #fff;   
+        color: white;
+        height: 75px;
+        width: 270px;
+        font-size: 25px;
+        text-align: center;
+        border-color: rgb(8, 226, 255) ;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        resize: none;
+        overflow: hidden;
+    }
+    
+    #vanaalertbox{
+        position: absolute;
+        top: 525px;
+        left: 1128px;
+        background-image: linear-gradient(to bottom right,rgb(236, 236, 236),rgb(73, 73, 175));
+        border: 3px double rgb(50, 194, 187);
+        resize: none;
+    }
+    
+    #myImg1{
+        padding-top: 15px;
+        padding-left: 40px;
+        width:350px;
+        height: 475px;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    
+    #ImgDiv{
+        margin-top: -40px;
+        font-size: 25px;
+    
+    }   
+    
+    
+    #leaderboardtext {
+        background-image: linear-gradient(to bottom right,rgb(26, 189, 230),rgb(90, 23, 199));
+        border: 10px double #fff;   
+        color: white;
+        margin-left: 50px;
+        height: 600px;
+        text-align: center;
+        width: 400px;
+        margin-right: 20px;
+        border-radius: 100px;
+        border-color: rgb(8, 226, 255);
+        font-size: 20px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    
+    }
+    
+    #display {
+        background-image: linear-gradient(rgb(26, 140, 206), rgb(37, 114, 101));
+        padding: 1em 2em;
+        text-align: center;
+        border-radius: 50px;
+        border: 15px double #fff;
+        border-color: rgb(8, 226, 255) ;
+        margin-top: -35px;
+    }
+    
+    #displaychosenletters{
+        background-color: #845ad3;
+        padding: 1em 2.5em;
+        text-align: center;
+        border-radius: 50px;
+        border: 5px double #fff;
+        border-color: rgb(8, 226, 255) ;
+        margin-top: 5px;
+    }
+    
+    #display div.word {
+        display: inline-block;
+        
+    }
+    
+    #display div.wordLetter {
+        display: block;
+        width: 75px;
+        height: 105px;
+        margin: 2px;
+        float: left;
+        color: #1c81a8;
+        background-image: linear-gradient(rgb(11, 107, 51), rgba(20, 209, 121, 0.822));
+        border: 10px solid #0d030f;
+        line-height: 105px;
+        font-size: 60px;
+        font-weight: bold;
+        border-style: solid;
+        
+    }
+    #display div.wordLetter.letter {
+        color: #250925;
+        background-image: linear-gradient(rgb(248, 246, 246), rgba(156, 156, 156, 0.822));
+        border: 10px solid #0d030f;
+        line-height: 105px;
+        font-size: 60px;
+        font-weight: bold;
+        border-style: solid;
+        float: left;
+        display: block;
+        width: 75px;
+        height: 105px;
+        margin: 2px;
+    }
+    
+    #playArea {
+        display: inline-block;
+        clear: both;
+        text-align: center;
+        margin-top: 12px;
+    }
+    
+    #spin {
+        background-image: linear-gradient(rgba(236, 130, 8, 0.938),rgba(175, 165, 22, 0.87));
+        text-transform: uppercase;
+        z-index: 500;
+        border: 10px double #fff;
+        margin: 2px;
+        padding: 15px 25px;
+        color: white;
+        font-family: inherit;
+        font-size: 17pt;
+        font-weight: 500;
+    }
+    
+    #vowel {
+        background-image: linear-gradient(rgba(75, 75, 75, 0.884),rgb(29, 29, 29));
+        text-transform: uppercase;
+        z-index: 500;
+        border: 10px double #fff;
+        margin: 2px;
+        padding: 15px 25px;
+        color: white;
+        font-family: inherit;
+        font-size: 17pt;
+        font-weight: 500;
+    }
+    
+    
+    #solve {
+        background-image: linear-gradient(rgba(75, 75, 75, 0.884),rgb(29, 29, 29));
+        text-transform: uppercase;
+        z-index: 500;
+        border: 10px double #fff;
+        margin: 2px;
+        padding: 15px 25px;
+        color: white;
+        font-family: inherit;
+        font-size: 17pt;
+        font-weight: 500;
+    }
+    
+    #newpuzzle {
+        background-image: linear-gradient(rgba(75, 75, 75, 0.884),rgb(29, 29, 29));
+        text-transform: uppercase;
+        z-index: 500;
+        border: 10px double #fff;
+        margin: 2px;
+        padding: 15px 25px;
+        color: white;
+        font-family: inherit;
+        font-size: 17pt;
+        font-weight: 500;
+    }
+    
+    
+    #playArea #moneyArea {
+        float: left;
+        z-index: 500;
+        height: 25px;
+        width: 200px;
+        margin-right: 5px;
+        font-size:18pt;
+        padding: 15px 45px;
+        background-image: linear-gradient(rgb(240, 26, 18),rgb(240, 77, 12));
+        text-align: left;
+        border-radius: 45px;
+        border: 12px double yellow;
+    }
+    
+    #playArea #moneyArea2 {
+        float: left;
+        z-index: 500;
+        height: 25px;
+        width: 200px;
+        margin-right: 5px;
+        font-size: 18pt;
+        padding: 15px 45px;
+        background-image: linear-gradient(rgb(218, 204, 15),rgb(173, 162, 9));
+        text-align: left;
+        border-radius: 45px;
+        border: 12px double white;
+    }
+    
+    #playArea #moneyArea3 {
+        float: left;
+        z-index: 500;
+        height: 25px;
+        width: 200px;
+        margin-right: 5px;
+        font-size: 18pt;
+        padding: 15px 45px;
+        background-image: linear-gradient(rgb(33, 12, 219),rgb(13, 62, 102));
+        text-align: left;
+        border-radius: 45px;
+        border: 12px double white;
+    }
+    #playArea #moneyArea #money {
+    }
+    .clear {
+        clear: both;
+    }
+    #playArea #moneyArea2 #money2 {
+    }
+    .clear {
+        clear: both;
+    }
+    #playArea #moneyArea3 #money3 {
+    }
+    .clear {
+        clear: both;
+    }
+    
+    /* For the IMAGE SELECTOR INSTRUCTION */
+    
+    #myImg:hover {
+        opacity: 0.7;
+    }
+    
+    
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 50px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Black w/ opacity */
+    }
+    
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 600px;
+    }
+    
+    /* Caption of Modal Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 350px;
+        text-align: center;
+        color: #ccc;
+        padding: 5px 0;
+        height: 75px;
+    }
+    
+    /* Add Animation */
+    .modal-content,
+    #caption {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+    
+    
+    
+    
+    @-webkit-keyframes zoom {
+        from {
+            -webkit-transform: scale(0)
+        }
+    
+        to {
+            -webkit-transform: scale(1)
+        }
+    }
+    
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+    
+        to {
+            transform: scale(1)
+        }
+    }
+    
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    
+    /* End of IMAGE SELECTOR ISNTRCUTIONS
+    
+    
+    /* Start of Popup CSS */
+    
+    #popup{
+        background-color: #1587f1;
+        border-radius: 50px;
+        border: 10px double #fff;
+    }
+    
+    
+    .hover_bkgr_fricc {
+        background: rgba(0, 0, 0, .4);
+        cursor: pointer;
+        display: none;
+        height: 100%;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        z-index: 10000;
+    }
+    
+    .hover_bkgr_fricc .helper {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    
+    .hover_bkgr_fricc>div {
+        background-color: #fff;
+        box-shadow: 10px 10px 60px #555;
+        display: inline-block;
+        height: auto;
+        max-width: 1000px;
+        min-height: 100px;
+        vertical-align: middle;
+        width: 60%;
+        position: relative;
+        border-radius: 8px;
+        padding: 5px;
+    }
+    
+    .popupCloseButton {
+        background-color: #fff;
+        border: 3px solid #999;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-block;
+        font-family: arial;
+        font-weight: bold;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        font-size: 25px;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+    }
+    
+    .popupCloseButton:hover {
+        background-color: #ccc;
+    }
+    
+    .trigger_popup_fricc {
+        cursor: pointer;
+        font-size: 20px;
+        margin: 20px;
+        display: inline-block;
+        font-weight: bold;
+    }
+    
+    /* End of Popup CSS */
+    }
+    
+    

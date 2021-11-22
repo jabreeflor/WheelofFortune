@@ -27,7 +27,6 @@ function bindEvent(el, eventName, eventHandler) {
     }
 }
 
-
 var Wheel = (function () {
     
     var wheel = document.getElementById('wheel'),
@@ -111,13 +110,20 @@ var Wheel = (function () {
 })();
 
 var WheelGame = (function () {
+
+    var level = 1;
+
+
+
     var counter = 1;
-    var gameLevel = 0;
     var player1Bal=0;
     var player2Bal=0;
     var player3Bal=0;
     var allText="LeaderBoard "
     var textarea="Letters chosen:" + "\n"; 
+    var alphabetArr = [];
+    var myTimer = 0;
+    var clock =0;
     var wheel = new Wheel(),
         vowels = ['A', 'E', 'I', 'O', 'U'],
         spinWheel = document.getElementById('spin'),
@@ -125,9 +131,9 @@ var WheelGame = (function () {
         displayArea = document.getElementById('display'),
         newButton = document.getElementById('newpuzzle'),
         money = document.getElementById('money'),
-        solve = document.getElementById('solve'),
-        timer = document.getElementById('timer');
+        solve = document.getElementById('solve');
         document.getElementById("tick").position="relative";
+
 
     function WheelGame(puzzles) {
         var _this = this;
@@ -135,25 +141,27 @@ var WheelGame = (function () {
         this.puzzles.randomize();
         this.currentMoney = 0;
         this.puzzleSolved = false;
+        
 
         bindEvent(buyVowel, "click", function () {
-            if (_this.currentMoney > 200) {
+            if (parseFloat(document.getElementById('money'+ counter).innerHTML) > 200) {
                 if (_this.createGuessPrompt("PLEASE ENTER A VOWEL", true) !== false) {
-                    _this.currentMoney -= 200;
+                    document.getElementById('money'+ counter).innerHTML =  parseFloat(document.getElementById('money'+ counter).innerHTML) - 200;
                     _this.updateMoney();
                 }
             } else {
                 alert("You need more than $200 to buy a vowel");
+                alert(money.innerHTML);
             }
         });
         bindEvent(newButton, "click", function () {
             _this.newRound();
         });
         var spinTheWheel = function () {
-            gameLevel++;
-            gameLevel = document.getElementById('displaylevel').innerHTML;
-
+            document.getElementById('tick').style.animation = "ticks 1s 1s infinite";
+            _this.timerCountdown();
             wheel.spin(function (valueSpun) {
+                
                 if (isNaN(valueSpun)) {
                     alert(valueSpun);
                 } else {
@@ -166,9 +174,13 @@ var WheelGame = (function () {
                         var amountFound = _this.createGuessPrompt(valueSpun);
                         _this.currentMoney += (valueSpun * amountFound);
                     }
-                    _this.changeTurn();
-                    _this.updateMoney();
+                    
+                    
+                    
                 }
+                _this.changeTurn();
+                _this.updateMoney();
+                
             });
         };
         bindEvent(spinWheel, "click", spinTheWheel);
@@ -205,23 +217,24 @@ var WheelGame = (function () {
             document.getElementById("moneyArea").style.borderColor="white";
             document.getElementById("moneyArea2").style.borderColor="yellow";
             document.getElementById("moneyArea3").style.borderColor="white";
-            counter++;
+            counter=2;
         }else if(counter ==2){
             money = document.getElementById('money2');
             document.getElementById("moneyArea").style.borderColor="white";
             document.getElementById("moneyArea2").style.borderColor="white";
             document.getElementById("moneyArea3").style.borderColor="yellow";
-            counter++;
+            counter=3;
         }else if(counter ==3){
             money = document.getElementById('money3');
             document.getElementById("moneyArea").style.borderColor="yellow";
             document.getElementById("moneyArea2").style.borderColor="white";
             document.getElementById("moneyArea3").style.borderColor="white";
             counter =1;
-        }
 
+        }
+       
         
-    }
+    };
     WheelGame.prototype.updateMoney = function () {
         money.innerHTML = parseFloat(money.innerHTML)+ this.currentMoney;
         player1Bal = parseFloat(document.getElementById('money').innerHTML);
@@ -229,6 +242,25 @@ var WheelGame = (function () {
         player3Bal = parseFloat(document.getElementById('money3').innerHTML);
         this.currentMoney = 0;
     };
+    WheelGame.prototype.timerCountdown = function (){
+        if(myTimer == 0){
+            myTimer =1;
+            clock = setInterval(myClock, 1000);
+            var c = 60
+            function myClock(){
+                document.getElementById("displaytimer").innerHTML = --c;
+                if(c == 0){
+                    clearInterval(clock);
+                    alert("Reached zero");
+            }
+        }
+
+    };
+
+}
+
+
+  
 
     WheelGame.prototype.guessLetter = function (guess, isVowel, solvingPuzzle) {
         var incorrect=0;
@@ -255,20 +287,33 @@ var WheelGame = (function () {
                     span.innerHTML = guess;
                     if (guess in this.lettersInPuzzle.toObject() && !(guess in this.guessedArray.toObject())) {
                         this.guessedArray.push(guess);
+                        
                     }
                 }else{
                     incorrect++;
                     //IF THE GUESS IS INCCORECT, THEN THE VARIABLE INCORRECT WILL BE INCREMENTED
+                    clearInterval(clock);
+                    document.getElementById("displaytimer").innerHTML = "60";
                 }
             }
             if(incorrect>0){
                 //if the guess is incorrect then the variable inccorrect is changed back to 0
-                alert("guess is false");
+               
                 incorrect=0;
             }
+            /*
+
+            FOR LOOP TO CHECK IF THE LETTER WAS ALREADY TYPED
+            for(var i = 0; i<alphabetArr.length();i++){
+                if(guess!=alphabetArr[i]){
+                    alphabetArr[i].push(guess);
+                }
+            }
+            */
             
             textarea+=""+guess+"  ";
             document.getElementById("anything").innerHTML= textarea;
+            
 
             if (this.guessedArray.length == this.lettersInPuzzle.length) {
                 alert("PUZZLE SOLVED!");
@@ -282,11 +327,11 @@ var WheelGame = (function () {
                 } else if(player1Bal<player2Bal && player3Bal<player2Bal){
                     alert("PLAYER 2 HAS WON");
                     document.getElementById("displayInfoAlert").innerHTML = "Player 2 is the lastest winner with a balance of " + player2Bal + " !";
-                    allText+="\n\nPlayer 1 has won with "+ player1Bal + " \nat " + concatTime;
+                    allText+="\n\nPlayer 2 has won with "+ player2Bal + " \nat " + concatTime;
                 }else if(player1Bal<player3Bal && player2Bal>player3Bal){
                     alert("PLAYER 3 HAS WON")
                     document.getElementById("displayInfoAlert").innerHTML = "Player 3 is the lastest winner with a balance of " + player3Bal + " !";
-                    allText+="\n\nPlayer 1 has won with "+ player1Bal + " \nat " + concatTime;
+                    allText+="\n\nPlayer 3 has won with "+ player3Bal + " \nat " + concatTime;
                 }
                 document.getElementById("leaderboardtext").innerHTML = allText;
                 this.puzzleSolved = true;
@@ -336,26 +381,51 @@ var WheelGame = (function () {
     };
 
     WheelGame.prototype.newRound = function () {
-        var round = ++this.round;
-        if (round < this.puzzles.length) {
-            while (displayArea.hasChildNodes()) { //remove old puzzle
-                displayArea.removeChild(displayArea.firstChild);
-                document.getElementById('money').innerHTML = 0;
-                document.getElementById('money2').innerHTML =0;
-                document.getElementById('money3').innerHTML =0;
-                money = document.getElementById('money');
-                document.getElementById("moneyArea").style.borderColor="white";
-                document.getElementById("moneyArea2").style.borderColor="yellow";
-                document.getElementById("moneyArea3").style.borderColor="white";
-                counter=1;
-                player1Bal=0;
-                player2Bal=0;
-                player3Bal=0;
+        if(level <4){
+            document.getElementById('displaylevel').innerHTML= "Level " + level;
+            var round = ++this.round;
+            if (round < this.puzzles.length) {
+                while (displayArea.hasChildNodes()) { //remove old puzzle
+                    displayArea.removeChild(displayArea.firstChild);
+                    document.getElementById('money').innerHTML = 0;
+                    document.getElementById('money2').innerHTML = 0;
+                    document.getElementById('money3').innerHTML = 0;
+                    money = document.getElementById('money');
+                    document.getElementById("moneyArea").style.borderColor="yellow";
+                    document.getElementById("moneyArea2").style.borderColor="white";
+                    document.getElementById("moneyArea3").style.borderColor="white";
+                    counter=1;
+                    player1Bal=0;
+                    player2Bal=0;
+                    player3Bal=0;
+                    textarea="Letters chosen:" + "\n"; 
+                    document.getElementById("anything").innerHTML= textarea;
+                }
+                this.startRound(round);
+                level++;
+            } else {
+                alert("No more puzzles!");
             }
-            this.startRound(round);
-        } else {
-            alert("No more puzzles!");
+        } else if(level = 4){
+            alert("bonus ROUND");
+            displayArea.removeChild(displayArea.firstChild);
+            document.getElementById('display').style.borderColor="yellow";
+            document.getElementById('money').innerHTML = 0;
+            document.getElementById('money2').innerHTML = 0;
+            document.getElementById('money3').innerHTML = 0;
+            money = document.getElementById('money');
+            document.getElementById("moneyArea").style.borderColor="yellow";
+            document.getElementById("moneyArea2").style.borderColor="white";
+            document.getElementById("moneyArea3").style.borderColor="white";
+            counter=1;
+            player1Bal=0;
+            player2Bal=0;
+            player3Bal=0;
+            textarea="Letters chosen:" + "\n"; 
+            document.getElementById("anything").innerHTML= textarea;
+
         }
+       
     };
 
     WheelGame.prototype.startRound = function (round) {
@@ -402,16 +472,13 @@ var WheelGame = (function () {
     return WheelGame;
 })();
 
-
-function disableButton(){
-
-
-
-}
-
-
 var Game = new WheelGame([
-     "app","jabree","Soupy Boys","Daddy"
+     "app","jabree","Soupy Boys","Bird",
+     "Lenovo", "Mark", "Matt", "Fries", "Blum", "Tenders",
+     "Apple", "Spider Man", "iPhone", "Chicken", "Flask",
+     "License", "Vigorous", "Spectrum", "Common", "preference",
+     "compartment", "Valorant", "League of Legends", "Call of Duty", "WarZone",
+     "Twitch", "YouTube", "Twitter", "JavaScript"
 ]);
 ///for instruction pop up upon clciking 
 //////////////////
